@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import { Text, View, StyleSheet, ActivityIndicator, FlatList } from 'react-native'
 
+const data = require('../../assets/data/products.json');
 export class ProductContainer extends Component {
   render() {
     return (

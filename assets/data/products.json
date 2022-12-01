@@ -1,0 +1,37 @@
+[{
+    "_id":{
+        "$oid": "5f15d8852a025143f9593a7c"
+    },
+    "image": "should be some path",
+    "brand": "PS3",
+    "price": 250,
+    "rating": 1,
+    "numReviews": 0,
+    "isFeatured": true,
+    "name": "FIFA 20",
+    "description": "the worst football game for ever",
+    "category": {
+        "$oid": "5f15d8852a025143f9593e9b"
+    },
+    "countInStock": 25,
+    "__v": 0
+},
+{
+    "_id":{
+        "$oid": "5f15d8852a025143f9593n8e"
+    },
+    "image": "should be some path",
+    "brand": "Apple",
+    "price": 500000,
+    "rating": 1,
+    "numReviews": 0,
+    "isFeatured": true,
+    "name": "Iphone Xmax",
+    "description": "the new Smartphone make by appple ",
+    "category": {
+        "$oid": "5f15d8852a025143f9593e3e"
+    },
+    "countInStock": 25,
+    "__v": 0
+}
+]
