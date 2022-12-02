@@ -1,10 +1,10 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Text, View, StyleSheet, ActivityIndicator, FlatList } from 'react-native'
+import ProductList from './ProductList';
 
 const data = require('../../assets/data/products.json');
 const ProductContainer = ()=>{
-    
     const [products, setProducts] = useState([]);
     useEffect(()=> {
         setProducts(data);
@@ -20,8 +20,8 @@ const ProductContainer = ()=>{
                 <FlatList 
                 horizontal
                 data={products}
-                renderItem={({item}) =>(<Text>{item.brand}</Text>)}
-                keyExtractor={item=> item.name}
+                renderItem={({item})=> <ProductList key={item} />}
+                keyExtractor={item => item.name}
                 />
             </View>
         </View>
