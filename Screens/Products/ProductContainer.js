@@ -1,37 +1,39 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
-import { Text, View, StyleSheet, ActivityIndicator, FlatList } from 'react-native'
-import ProductList from './ProductList';
+import React, { useState, useEffect } from "react";
+import { FlatList, StyleSheet, Text, View } from "react-native";
+
 
 const data = require('../../assets/data/products.json');
-const ProductContainer = ()=>{
-    const [products, setProducts] = useState([]);
-    useEffect(()=> {
-        setProducts(data);
 
+const ProductContainer = () =>{
+    const [products, setProducts] = useState([]);
+
+    useEffect(()=>{
+        setProducts(data);
         return ()=>{
             setProducts([])
         }
     }, [])
-    return(
-        <View>
-            <Text>Product container</Text>
-            <View style={styles.container}>
-                <FlatList 
-                horizontal
-                data={products}
-                renderItem={({item})=> <ProductList key={item.id} />}
-                keyExtractor={item => item.name}
-                />
-            </View>
+
+
+    return (
+        <View style={styles.container}>
+            <FlatList 
+            horizontal
+            data={products}
+            renderItem={({item})=><Text>{item.brand}</Text>}
+            keyExtractor={item => item.name}
+            /> 
+
         </View>
     )
 }
 const styles = StyleSheet.create({
     container: {
-        alignItems: 'center',
+        flex: 1,
         justifyContent: 'center',
-        marginTop: 100,
+        alignItems: 'center'
+
     }
 })
-export default ProductContainer
+
+export default ProductContainer;

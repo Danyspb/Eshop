@@ -6,12 +6,11 @@ var {width} = Dimensions.get('screen');
 
 const ProductList = (props) =>{
     const {item} = props;
-
     return(
         <TouchableOpacity style={styles.touch} >
             <View style={{width: width /2, backgroundColor: 'gainsboro'}}>
 
-                <ProductCard {...item} />
+                <ProductCard />
             </View>
         </TouchableOpacity>
     )
@@ -19,10 +18,13 @@ const ProductList = (props) =>{
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'grey'
+        backgroundColor: 'grey',
+        
+
     },
     touch: {
-        width: '50%'
+        width: '50%',
+        
     }
 
 })

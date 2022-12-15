@@ -3,7 +3,6 @@ import { StyleSheet, View, Dimensions, Text, Image, Button} from "react-native";
 
 var {width} = Dimensions.get('screen');
 const ProductCard = (props) => {
-
     const {name, price, image, countInStock} = props;
 
     return(
