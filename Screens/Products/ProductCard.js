@@ -1,20 +1,27 @@
 import React from "react";
 import { StyleSheet, View, Dimensions, Text, Image, Button} from "react-native";
 
-var {width} = Dimensions.get('screen');
+var {width} = Dimensions.get('window');
+
 const ProductCard = (props) => {
     const {name, price, image, countInStock} = props;
 
     return(
-        <View>
-            <Image styles={styles.image} />
+        <View style={styles.container}>
+            <Image styles={styles.image} resizeMode="contain" source={{ uri: image ? image: 'https://i.postimg.cc/j2v9xxn6/fix.png'}} />
             <View  style={styles.card}/>
             <Text style={styles.title}> 
-                {name ? name.substring(0, 15 - 3) +'...': name}
+                {name.lenght > 15 ? name.substring(0, 15 - 3) 
+                +'...': name}
             </Text>
-            <Text style={styles.price}>${price}
+            <Text style={styles.price}>${price}</Text>
 
-            </Text>
+            {countInStock > 0 ? (
+                <View style={{marginBottom: 50}}>
+                    <Button title="Add" color={'green'} /> 
+                </View>
+            ): <Text style={{marginTop: 20}}>Currently Unavailable</Text>}
+
         </View>
     )
 }
@@ -46,8 +53,8 @@ const styles = StyleSheet.create({
     },
     title: {
         fontWeight: 'bold',
-        fontSize: 40,
-        textAlign: 'center',
+        fontSize: 20,
+        textAlign:'center'
     },
     price:{
         fontSize: 20,
