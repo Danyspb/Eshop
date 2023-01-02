@@ -6,6 +6,7 @@ var {width} = Dimensions.get('window');
 
 const ProductList = (props)=>{
     const {item} = props;
+   
     return(
         <TouchableOpacity style={styles.container}>
             <View style={{width: width /2, backgroundColor: 'gainsboro' }}>
