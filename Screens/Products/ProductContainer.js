@@ -15,11 +15,10 @@ const ProductContainer = () =>{
         }
     }, [])
 
-
     return (
         <View style={styles.container}>
             <FlatList 
-            horizontal
+            numColumns={2}
             data={products}
             renderItem={({item})=>
                 <ProductList key={item.id} item={item}

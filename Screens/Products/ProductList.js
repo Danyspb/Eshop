@@ -10,7 +10,8 @@ const ProductList = (props)=>{
     return(
         <TouchableOpacity style={styles.container}>
             <View style={{width: width /2, backgroundColor: 'gainsboro' }}>
-                <ProductCard {...item} />
+                <ProductCard
+                 {...item} />
             </View>
         </TouchableOpacity>
     )
