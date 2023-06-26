@@ -34,7 +34,9 @@ const ProductContainer = () =>{
 }
 const styles = StyleSheet.create({
     container: {
-        marginTop: '40%',
+        flex: 1,
+        alignItems: "center",
+        backgroundColor: 'gainsboro'
     }
 })
 
