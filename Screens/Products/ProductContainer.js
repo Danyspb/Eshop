@@ -3,7 +3,6 @@ import { FlatList, StyleSheet, View } from "react-native";
 import ProductList from "./ProductList";
 
 
-
 const data = require('../../assets/data/products.json');
 
 const ProductContainer = () =>{
@@ -17,9 +16,9 @@ const ProductContainer = () =>{
     }, [])
 
     return (
-
-                <View style={styles.container}>
-                    <FlatList 
+        
+            <View style={styles.container}>
+                <FlatList 
                     numColumns={2}
                     data={products}
                     renderItem={({item})=>
@@ -27,7 +26,7 @@ const ProductContainer = () =>{
                         />}
                     keyExtractor={item => item.name}
                     /> 
-                </View>
+            </View>
         
     )
     
