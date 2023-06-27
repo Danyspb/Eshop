@@ -8,9 +8,12 @@ const data = require('../../assets/data/products.json');
 
 const ProductContainer = () =>{
     const [products, setProducts] = useState([]);
+    const [searchProduct, setSearchProduct] = useState([]);
+
 
     useEffect(()=>{
         setProducts(data);
+        setSearchProduct(data);
         return ()=>{
             setProducts([])
         }
@@ -19,7 +22,10 @@ const ProductContainer = () =>{
     return (
         <NativeBaseProvider>
             <VStack>
-                <Input placeholder="Search" width="100%" borderRadius="4" py="3" px="1" fontSize="14" InputLeftElement={<Icon m="2" ml="3" size="6" color="gray.400" as={<MaterialIcons name="search" />} />} />
+                <Input placeholder="Search" 
+                width="100%" borderRadius="4" 
+                py="3" px="1" fontSize="14" 
+                InputLeftElement={<Icon m="2" ml="3" size="6" color="gray.400" as={<MaterialIcons name="search" />} />} />
             </VStack>
             <View style={styles.container}>
                 <FlatList 
