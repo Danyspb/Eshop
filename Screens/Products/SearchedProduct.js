@@ -3,14 +3,14 @@ import React from "react";
 import {  StyleSheet, View } from "react-native";
 
 const SearchProductFilter = (props) =>{
-    const {productfilter} = props;
+    const {searchProduct} = props;
     return(
         <View>
             <NativeBaseProvider>
                 <Container>
                     {
-                        productfilter.lenght > 0 ? (
-                            productfilter.map((item)=>(
+                        searchProduct.lenght > 0 ? (
+                            searchProduct.map((item)=>(
                                 <Box>
                                     <Pressable>
                                         <Box pl="4" pr="5" py="2">
