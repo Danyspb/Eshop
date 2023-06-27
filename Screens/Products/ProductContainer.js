@@ -25,7 +25,7 @@ const ProductContainer = () =>{
     }, [])
 
 
-    const searchProd =(text) =>{
+    const produitRecherhche =(text) =>{
         setSearchProduct(
             products.filter((i) => i.name.toLowerCase().include(text.toLowerCase()))
         )       
@@ -46,7 +46,7 @@ const ProductContainer = () =>{
             <VStack>
                 <Input 
                 onFocus={openList}
-                onChangeText={(text)=> searchProd(text)}
+                onChangeText={(text)=> produitRecherhche(text)}
                 placeholder="Search" 
                 width="100%" borderRadius="4" 
                 py="3" px="1" fontSize="14" 
@@ -54,7 +54,7 @@ const ProductContainer = () =>{
             </VStack>
             {focus == true ? (
                 <SearchProductFilter 
-                    searchProd={searchProduct}
+                    searchProduct={searchProduct}
                 /> 
              ):(
                 <View style={styles.container}>

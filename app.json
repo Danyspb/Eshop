@@ -4,11 +4,11 @@
     "slug": "eshop",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/image/first.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/icon.png",
-      "resizeMode": "contain",
+      "image": "./assets/image/debut.png",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "assetBundlePatterns": [

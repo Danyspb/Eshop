@@ -2,8 +2,8 @@ import { NativeBaseProvider, Box, Text, Pressable, HStack, Avatar, VStack, Conta
 import React from "react";
 import {  StyleSheet, View } from "react-native";
 
-const SearchProductFilter = (props) =>{
-    const {searchProduct} = props;
+const SearchProductFilter = ({searchProduct}) =>{
+    
     return(
         <View>
             <NativeBaseProvider>
@@ -17,17 +17,17 @@ const SearchProductFilter = (props) =>{
                                             <HStack alignItems="center" space={3}>
                                               <Avatar size="48px" source={{ uri: item.image}} />
                                                 <VStack>
-                                                 <Text color="coolGray.800" _dark={{color: 'warmGray.50'}} bold>
-                                                    {item.name}
-                                                 </Text>
-                                                <Text color="coolGray.600" _dark={{color: 'warmGray.200'}}>
-                                                    {item.description}
-                                                </Text>
+                                                    <Text color="coolGray.800" _dark={{color: 'warmGray.50'}} bold>
+                                                        {item.name}
+                                                    </Text>
+                                                    <Text color="coolGray.600" _dark={{color: 'warmGray.200'}}>
+                                                        {item.description}
+                                                    </Text>
                                                 </VStack>
                                             </HStack>
-                                            </Box>
-                                        </Pressable>
                                         </Box>
+                                    </Pressable>
+                                </Box>
                             ))
                         ):(
                             <View style={styles.center}>
