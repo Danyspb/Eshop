@@ -71,9 +71,9 @@ const ProductContainer = () =>{
                 /> 
              ):(
                 <View style={styles.container}>  
-                <View>
+                {/* <View>
                     <Banner /> 
-                </View>
+                </View> */}
                 <FlatList 
                     numColumns={2}
                     data={products}
