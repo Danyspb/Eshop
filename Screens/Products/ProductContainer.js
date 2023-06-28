@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { FlatList, StyleSheet, View } from "react-native";
+import { Dimensions, FlatList, StyleSheet, View, Text } from "react-native";
 import ProductList from "./ProductList";
 import { VStack, Input, Icon, NativeBaseProvider } from "native-base";
 import { MaterialIcons } from "@expo/vector-icons";
 import SearchProductFilter from "./SearchedProduct";
+import Banner from "../../Shared/Banner";
 
 const data = require('../../assets/data/products.json');
+
+
 
 const ProductContainer = () =>{
     const [products, setProducts] = useState([]);
@@ -42,22 +45,35 @@ const ProductContainer = () =>{
 
 
     return (
-        <NativeBaseProvider>
-            <VStack>
+        <NativeBaseProvider >
+            <VStack >
                 <Input 
-                onFocus={openList}
-                onChangeText={(text)=> produitRecherhche(text)}
-                placeholder="Search" 
-                width="100%" borderRadius="4" 
-                py="3" px="1" fontSize="14" 
-                InputLeftElement={<Icon m="2" ml="3" size="6" color="gray.400" as={<MaterialIcons name="search" />} />} />
+                    onFocus={openList}
+                    onChangeText={(text)=> produitRecherhche(text)}
+                    placeholder="Search" 
+                    width="100%"
+                    borderRadius="4" 
+                    py="3" px="1" fontSize="14" 
+                    InputLeftElement={<Icon m="2" ml="3" size="6" color="gray.400" as={<MaterialIcons name="search" />} />} 
+                    
+                />
+                { focus == true ?(
+                        <Icon InputLeftElement={<Icon m="2" ml="3" size="6" color="gray.400" as={<MaterialIcons name="close" />} />} InputRightElement={<Icon m="2" mr="3" size="6" color="gray.400" as={<MaterialIcons name="close" />} />} /> 
+                    ): null
+                }
+
             </VStack>
+
+            
             {focus == true ? (
                 <SearchProductFilter 
                     searchProduct={searchProduct}
                 /> 
              ):(
-                <View style={styles.container}>
+                <View style={styles.container}>  
+                <View>
+                    <Banner /> 
+                </View>
                 <FlatList 
                     numColumns={2}
                     data={products}
@@ -65,10 +81,10 @@ const ProductContainer = () =>{
                     <ProductList key={item.id} item={item}
                 />}
                     keyExtractor={item => item.name}/> 
+                    
                 </View>
              )
             }
-            
     
         </NativeBaseProvider>
     )
