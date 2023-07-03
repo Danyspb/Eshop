@@ -5,9 +5,10 @@ import { VStack, Input, Icon, NativeBaseProvider } from "native-base";
 import { MaterialIcons } from "@expo/vector-icons";
 import SearchProductFilter from "./SearchedProduct";
 import Banner from "../../Shared/Banner";
+import CategoryFilter from "./CategoryFilter";
 
 const data = require('../../assets/data/products.json');
-const categories = require('../../assets/data/categories.json')
+const dataCategorie = require('../../assets/data/categories.json')
 
 
 
@@ -24,7 +25,7 @@ const ProductContainer = () =>{
         setProducts(data);
         setSearchProduct(data);
         setFocus(false);
-        setCategories(categories);
+        setCategories(dataCategorie);
         setActive(-1)
         setInitialState(data)
 
@@ -85,6 +86,9 @@ const ProductContainer = () =>{
                 <View style={styles.container}>  
                 {/* <View>
                     <Banner /> 
+                </View> */}
+                {/* <View>
+                    <CategoryFilter /> 
                 </View> */}
                 <FlatList 
                     numColumns={2}
