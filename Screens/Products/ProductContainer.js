@@ -7,23 +7,36 @@ import SearchProductFilter from "./SearchedProduct";
 import Banner from "../../Shared/Banner";
 
 const data = require('../../assets/data/products.json');
+const categories = require('../../assets/data/categories.json')
 
 
 
 const ProductContainer = () =>{
     const [products, setProducts] = useState([]);
     const [searchProduct, setSearchProduct] = useState([]);
-    const [focus, setFocus] = useState()
+    const [focus, setFocus] = useState();
+    const [categories, setCategories] = useState([]);
+    const [active, setActive] = useState();
+    const [initialState, setInitialState] = useState();
 
 
     useEffect(()=>{
         setProducts(data);
         setSearchProduct(data);
-        setFocus(false)
+        setFocus(false);
+        setCategories(categories);
+        setActive(-1)
+        setInitialState(data)
+
+
+
         return ()=>{
             setProducts([])
             setSearchProduct([])
-            setFocus()
+            setFocus();
+            setCategories([]);
+            setActive();
+            setInitialState();
         }
     }, [])
 
@@ -42,7 +55,6 @@ const ProductContainer = () =>{
         setFocus(false)
 
     }
-
 
     return (
         <NativeBaseProvider >
@@ -67,7 +79,7 @@ const ProductContainer = () =>{
             
             {focus == true ? (
                 <SearchProductFilter 
-                    searchProduct={searchProduct}
+                    searchProduct={produitRecherhche}
                 /> 
              ):(
                 <View style={styles.container}>  
