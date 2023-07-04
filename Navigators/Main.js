@@ -1,13 +1,21 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
-import Icon from "react-native-vector-icons/FontAwesome"
+import Icon from "react-native-vector-icons/FontAwesome5"
+import { Ionicons } from '@expo/vector-icons'
+
+
+// Stacks
+import HomeNavigator from "./HomeNavigator";
+
+
+
 const Tab = createBottomTabNavigator();
 
 const Main =()=>{
 
     return(
         <Tab.Navigator 
-        initialRouteName="Home"
+        initialRouteName="Acceuil"
         screenOptions={{
             tabBarHideOnKeyboard: true,
             tabBarShowLabel: false,
@@ -16,16 +24,50 @@ const Main =()=>{
 
             <Tab.Screen 
             name="Home"
+            component={HomeNavigator}
+                options={{
+                    tabBarIcon:()=><Ionicons 
+                    name="home"
+                    size={30}
+                    color={'red'}
+                    />
+                }}
+            /> 
+            <Tab.Screen 
+            name="Cart"
             component={''}
             options={{
-                tabBarIcon:({color}) =>{
-                    <Icon 
-                    name="home"
-                    size={25}
+                tabBarIcon:()=><Ionicons 
+                name="cart"
+                size={30}
+                color={'red'}
+                />
+            }}    
+            /> 
+            <Tab.Screen 
+            name="Admin"
+            component={''}
+            options={{
+                tabBarIcon:()=><Ionicons 
+                    name="cog"
+                    size={30}
+                    color={'red'}
                     />
-                }
-            }}
+            }}    
+            /> 
+            <Tab.Screen 
+            name="User"
+            component={''}
+            options={{
+                tabBarIcon:()=><Ionicons 
+                    name="person"
+                    size={30}
+                    color={'red'}
+                    />
+            }}    
             /> 
         </Tab.Navigator>
     )
 }
+
+export default Main;
