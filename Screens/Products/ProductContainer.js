@@ -12,7 +12,7 @@ const dataCategorie = require('../../assets/data/categories.json')
 
 
 
-const ProductContainer = () =>{
+const ProductContainer = (props) =>{
     const [products, setProducts] = useState([]);
     const [searchProduct, setSearchProduct] = useState([]);
     const [focus, setFocus] = useState();
@@ -94,7 +94,10 @@ const ProductContainer = () =>{
                     numColumns={2}
                     data={products}
                     renderItem={({item})=>
-                    <ProductList key={item.id} item={item}
+                    <ProductList
+                    navigation={props.navigation}
+                     key={item.id} 
+                     item={item}
                 />}
                     keyExtractor={item => item.name}/> 
                     

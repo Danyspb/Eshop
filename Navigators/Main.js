@@ -19,7 +19,9 @@ const Main =()=>{
         screenOptions={{
             tabBarHideOnKeyboard: true,
             tabBarShowLabel: false,
-            tabBarActiveTintColor: '#e91e63'
+            tabBarActiveTintColor: 'red',
+            tabBarInactiveTintColor: 'gray',
+            headerShown: false,
         }}>
 
             <Tab.Screen 
@@ -32,9 +34,8 @@ const Main =()=>{
                         size={30}
                         color={color}
                         />
-                    ),
-                tabBarActiveTintColor: 'red',
-                tabBarInactiveTintColor: 'gray',
+                    )
+                
                 }}
             /> 
             <Tab.Screen 
@@ -47,9 +48,8 @@ const Main =()=>{
                     size={30}
                     color={color}
                     />
-                ),
-            tabBarActiveTintColor: 'red',
-            tabBarInactiveTintColor: 'gray',
+                )
+           
             }}    
             /> 
             <Tab.Screen 
@@ -62,9 +62,7 @@ const Main =()=>{
                     size={30}
                     color={color}
                     />
-                ),
-            tabBarActiveTintColor: 'red',
-            tabBarInactiveTintColor: 'gray',
+                )
             }}    
             /> 
             <Tab.Screen 
@@ -77,9 +75,7 @@ const Main =()=>{
                     size={30}
                     color={color}
                     />
-                ),
-            tabBarActiveTintColor: 'red',
-            tabBarInactiveTintColor: 'gray',
+                )
             }}    
             /> 
         </Tab.Navigator>
