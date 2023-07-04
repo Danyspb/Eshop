@@ -12,7 +12,6 @@ const ProductList = (props)=>{
         <TouchableOpacity style={styles.container}
         onPress={()=>{
             props.navigation.navigate('Product Details',{item:item})
-            console.log({item})
         }}
         >
             <View style={{width: width /2, backgroundColor: 'gainsboro' }}>
