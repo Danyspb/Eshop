@@ -26,44 +26,60 @@ const Main =()=>{
             name="Home"
             component={HomeNavigator}
                 options={{
-                    tabBarIcon:()=><Ionicons 
-                    name="home"
-                    size={30}
-                    color={'red'}
-                    />
+                    tabBarIcon:({color})=>(
+                        <Ionicons 
+                        name="home"
+                        size={30}
+                        color={color}
+                        />
+                    ),
+                tabBarActiveTintColor: 'red',
+                tabBarInactiveTintColor: 'gray',
                 }}
             /> 
             <Tab.Screen 
             name="Cart"
-            component={''}
+            component={HomeNavigator}
             options={{
-                tabBarIcon:()=><Ionicons 
-                name="cart"
-                size={30}
-                color={'red'}
-                />
+                tabBarIcon:({color})=>(
+                    <Ionicons 
+                    name="cart"
+                    size={30}
+                    color={color}
+                    />
+                ),
+            tabBarActiveTintColor: 'red',
+            tabBarInactiveTintColor: 'gray',
             }}    
             /> 
             <Tab.Screen 
             name="Admin"
-            component={''}
+            component={HomeNavigator}
             options={{
-                tabBarIcon:()=><Ionicons 
+                tabBarIcon:({color})=>(
+                    <Ionicons 
                     name="cog"
                     size={30}
-                    color={'red'}
+                    color={color}
                     />
+                ),
+            tabBarActiveTintColor: 'red',
+            tabBarInactiveTintColor: 'gray',
             }}    
             /> 
             <Tab.Screen 
             name="User"
-            component={''}
+            component={HomeNavigator}
             options={{
-                tabBarIcon:()=><Ionicons 
+                tabBarIcon:({color})=>(
+                    <Ionicons 
                     name="person"
                     size={30}
-                    color={'red'}
+                    color={color}
                     />
+                ),
+            tabBarActiveTintColor: 'red',
+            tabBarInactiveTintColor: 'gray',
             }}    
             /> 
         </Tab.Navigator>
